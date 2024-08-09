@@ -26,10 +26,14 @@ public class InfluxDatabaseClient {
 
 
     /**
-     * Creates a new instance of the @link InfluxDatabaseClient.
+     * Private constructor for creating a new instance of {@link InfluxDatabaseClient}.
+     * <p>
+     * This constructor initializes the {@code InfluxDatabaseClient} with the provided configuration and logger.
+     * It also sets up synchronized lists for managing points and error counts.
+     * </p>
      *
-     * @param config {@link InfluxDBConfig}
-     * @param logger {@link Logger}
+     * @param config the {@link InfluxDBConfig} used to configure the client.
+     * @param logger the {@link Logger} used for logging within the client.
      */
     private InfluxDatabaseClient(InfluxDBConfig config, Logger logger) {
 
@@ -42,10 +46,17 @@ public class InfluxDatabaseClient {
     }
 
     /**
-     * Creates the singleton instance of the {@link InfluxDatabaseClient}.
-     * @param config {@link InfluxDBConfig}
-     * @param logger {@link Logger}
-     * @return the created instance of {@link InfluxDatabaseClient}
+     * Creates and returns the singleton instance of {@link InfluxDatabaseClient}.
+     * <p>
+     * This method ensures that only one instance of {@link InfluxDatabaseClient}
+     * is created throughout the application's lifecycle. If the instance already
+     * exists, it returns the existing one; otherwise, it creates a new instance
+     * with the provided {@link InfluxDBConfig} and {@link Logger}.
+     * </p>
+     *
+     * @param config the configuration for the InfluxDB connection.
+     * @param logger the logger to be used by the InfluxDatabaseClient.
+     * @return the singleton instance of {@link InfluxDatabaseClient}.
      */
     public static InfluxDatabaseClient getInstance(InfluxDBConfig config, Logger logger) {
 

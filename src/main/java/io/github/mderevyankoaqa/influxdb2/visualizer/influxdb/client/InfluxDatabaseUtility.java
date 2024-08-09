@@ -6,6 +6,11 @@ package io.github.mderevyankoaqa.influxdb2.visualizer.influxdb.client;
  */
 public class InfluxDatabaseUtility {
 
+    // Private constructor to prevent instantiation
+    private InfluxDatabaseUtility() {
+        // This constructor is intentionally left empty to prevent instantiation.
+    }
+
     /**
      * Updates not supported values.
      * @param value the string which is going to be updated.
@@ -20,10 +25,19 @@ public class InfluxDatabaseUtility {
     }
 
     /**
-     * Gets the substring from the value.
-     * @param value the initial value.
-     * @param expectedLength the expected length.
-     * @return returns the the truncated string if the initial string length is less or equal to expected length; otherwise initial string.
+     * Returns a substring of the specified length from the given string.
+     * <p>
+     * If the length of the provided string is greater than or equal to the
+     * expected length, this method returns the substring starting from the
+     * beginning of the string up to the expected length. If the length of the
+     * string is less than the expected length, the entire string is returned
+     * without any truncation.
+     * </p>
+     *
+     * @param value the original string from which the substring will be extracted.
+     * @param expectedLength the desired length of the substring.
+     * @return the substring of the specified length if the original string is
+     *         longer than the expected length; otherwise, the original string.
      */
     public static String getSubstring(String value, int expectedLength)
     {

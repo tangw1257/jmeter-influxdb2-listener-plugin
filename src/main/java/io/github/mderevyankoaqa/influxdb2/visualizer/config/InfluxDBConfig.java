@@ -133,9 +133,21 @@ public class InfluxDBConfig {
     private int responseBodyLength;
 
     /**
-     * Creates the new instance of {@link InfluxDBConfig}
+     * Constructs a new {@link InfluxDBConfig} instance using the provided {@link BackendListenerContext}.
+     * <p>
+     * This constructor initializes the InfluxDB configuration settings by extracting parameters
+     * from the provided context and performing necessary validation checks.
+     * </p>
      *
-     * @param context the {@link BackendListenerContext}
+     * <ul>
+     *   <li>Validates and sets the InfluxDB URL, ensuring that the scheme is either HTTP or HTTPS.</li>
+     *   <li>Validates and sets the InfluxDB authentication token.</li>
+     *   <li>Validates and sets the InfluxDB organization and bucket names.</li>
+     *   <li>Validates and sets batch size, flush interval, error threshold, and response body length.</li>
+     * </ul>
+     *
+     * @param context the {@link BackendListenerContext} containing the configuration parameters for InfluxDB.
+     * @throws IllegalArgumentException if any of the required parameters are missing or invalid.
      */
     public InfluxDBConfig(BackendListenerContext context) {
         String influxDBURL = context.getParameter(KEY_INFLUX_DB_URL);

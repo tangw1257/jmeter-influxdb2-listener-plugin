@@ -15,16 +15,21 @@ public class SampleResultPointProvider {
     private static final String NO_DATA = "noData";
 
     /**
-     * Creates the new instance of the {@link SampleResultPointProvider}.
-     * @param sampleResultContext the {@link SampleResultPointContext}.
+     * Creates a new instance of the {@link SampleResultPointProvider}.
+     * Initializes the provider with the given {@link SampleResultPointContext}.
+     *
+     * @param sampleResultContext the context used to initialize the provider; must be an instance of {@link SampleResultPointContext}.
      */
     public SampleResultPointProvider(SampleResultPointContext sampleResultContext) {
         this.sampleResultContext = sampleResultContext;
     }
 
     /**
-     * Gets {@link Point}, returns the OK or KO jmeter point, depends from the sample result.
-     * @return {@link Point} to save.
+     * Retrieves a {@link Point} based on the sample result.
+     * The returned point is marked as either "pass" or "fail" depending on the error count of the sample result.
+     *
+     * @return the {@link Point} representing the result of the sample; the point is tagged with "pass" if there are no errors,
+     *         or "fail" if there are errors.
      */
     public Point getPoint() {
         Point point = this.getDefaultPoint();
@@ -40,9 +45,12 @@ public class SampleResultPointProvider {
     }
 
     /**
-     * Gets the error body to be saved in the point.
-     * @param isToBeSaved set to true if body need to be saved; otherwise false.
-     * @return the normalized string if parameter @param isToBeSaved set to true; 'noData' string otherwise.
+     * Retrieves the error body to be saved in the point.
+     *
+     * @param isToBeSaved if true, the error body will be saved; if false, 'noData' will be returned.
+     * @param isSuccessful if true, the error body will be retrieved; otherwise 'noData' will be returned.
+     * @return the error body as a normalized string if {@code isToBeSaved} and {@code isSuccessful} are true;
+     *         otherwise returns 'noData'.
      */
      private String getErrorBodyToBeSaved(boolean isToBeSaved, boolean isSuccessful)
      {

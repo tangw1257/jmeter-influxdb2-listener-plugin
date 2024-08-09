@@ -18,6 +18,17 @@ public class SampleResultPointContext {
     private String samplerType;
 
     /**
+     * Default constructor for the {@code SampleResultPointContext} class.
+     * <p>
+     * This constructor initializes a new instance of {@code SampleResultPointContext} with default settings.
+     * It does not perform any additional setup or initialization tasks.
+     * </p>
+     */
+    public SampleResultPointContext()
+    {
+    }
+
+    /**
      * Checks whether the body of the failed repose is going to be saved.
      * @return true to save body; otherwise false to skip saving.
      */

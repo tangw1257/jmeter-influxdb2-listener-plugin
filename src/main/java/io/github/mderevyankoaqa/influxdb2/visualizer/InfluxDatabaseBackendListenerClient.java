@@ -35,6 +35,16 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class InfluxDatabaseBackendListenerClient extends AbstractBackendListenerClient implements Runnable {
+
+    /**
+     * Constructs a new instance of {@link InfluxDatabaseBackendListenerClient}.
+     * This constructor is currently empty, but can be used to initialize any necessary
+     * resources or configurations in future extensions.
+     */
+    public InfluxDatabaseBackendListenerClient() {
+
+    }
+
     /**
      * Logger.
      */

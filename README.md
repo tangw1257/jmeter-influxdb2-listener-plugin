@@ -62,11 +62,11 @@ Pay attention on "Sending metrics performance tuning" chapter, see below.
 
 ## Compatibility
 The supported versions:
-* Java 11 - make sure that you have it (its minimum version).
+* 🚨 Java 11 - make sure that you have it (its minimum version); otherwise errors will occur while plugin loading.
 * InfluxDB v2.x, see release notes: https://docs.influxdata.com/influxdb/v2.0/reference/release-notes/influxdb/  (1.8 is not supported)
-* JMeter 5.6.2 only.
+* JMeter 5.6.3 only.
 
-* The current board and plugin were tested on Grafana 10.1.4 and InfluxDB 2.7.1, JAVA 15.
+* The current board and plugin were tested on Grafana 11.1.3 and InfluxDB 2.7.8, JAVA 21.0.1.
 
 ## Maven Support
 Please see the latest release here https://search.maven.org/artifact/io.github.mderevyankoaqa/jmeter-plugins-influxdb2-listener.
@@ -77,7 +77,7 @@ The example of the adding plugin to the project with the jmeter-maven:
 
           <configuration>
                 <jmeterExtensions>
-                  <artifact>io.github.mderevyankoaqa:jmeter-plugins-influxdb2-listener:2.1</artifact>
+                  <artifact>io.github.mderevyankoaqa:jmeter-plugins-influxdb2-listener:2.8</artifact>
                 </jmeterExtensions>
             </configuration>
 Some notes cab be found in the article [Adding jar's to the /lib/ext directory](https://github.com/jmeter-maven-plugin/jmeter-maven-plugin/wiki/Adding-Excluding-libraries-to-from-the-classpath).
