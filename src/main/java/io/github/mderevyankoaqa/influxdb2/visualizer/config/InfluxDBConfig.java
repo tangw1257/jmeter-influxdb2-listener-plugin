@@ -30,7 +30,7 @@ public class InfluxDBConfig {
     /**
      * Default token.
      */
-    public static final String DEFAULT_INFLUX_DB_TOKEN = "put token here";
+    public static final String DEFAULT_INFLUX_DB_TOKEN = "put token here test";
 
     /**
      * Default organization.
